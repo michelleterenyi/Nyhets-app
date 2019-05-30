@@ -7,6 +7,9 @@ function Nyhetslista() {
     return (
     <section>
         <Nyhetsartikel />
+        <Nyhetsartikel />
+        <Nyhetsartikel />
+        <Nyhetsartikel />
     </section>);
 }
 
