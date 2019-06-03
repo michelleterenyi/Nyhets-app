@@ -3,14 +3,12 @@
 import React from 'react';
 import Nyhetsartikel from './Nyhetsartikel';
 
-function Nyhetslista() {
+function Nyhetslista(props) {
     return (
     <section>
-        <Nyhetsartikel />
-        <Nyhetsartikel />
-        <Nyhetsartikel />
-        <Nyhetsartikel />
-    </section>);
+        props.art
+    </section>
+    );
 }
 
 export default Nyhetslista;
