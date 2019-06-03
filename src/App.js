@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nyhetslista from './Components/Nyhetslista';
+import data from './fuskdata';
 
 class App extends Component {
   render () {
