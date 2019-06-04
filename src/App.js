@@ -24,10 +24,18 @@ class App extends Component {
     description:"Beskrivning av den andra testnyheten",
     }]};
   }
+      
+      render () {
+        return (
+          <div classname="Rubrik">
+            <h1>Dagens Nyheter!</h1>
+          </div>
+        )
+      }
 
     componentDidMount() {
       fetch("https://newsapi.org/v2/top-headlines?country=se&apiKey=f8365b3bd0cb497aaffb9125d1a42e74").then( function(response) {
-        // Detta gör något med den information som kommer tillbaka.
+        // Behandlar den information som kommer tillbaka.
         return response.json()
       } ).then( jsondata => {
         // Gör något med Json objektet

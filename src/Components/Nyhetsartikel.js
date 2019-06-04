@@ -9,11 +9,11 @@ function Nyhetsartikel(props) {
     <div className="grid">
       <article>
         <img src={props.minArtikel.urlToImage} className="Bilder"/>
-        <h2 className="Rubrik">{props.minArtikel.title}</h2>
+        <h2 className="rubriker">{props.minArtikel.title}</h2>
         <p>{props.minArtikel.description}</p>
 
       {/* Länk till artiklarna */}
-        <a href={props.minArtikel.url} target="">Läs mer...</a>
+        <a href={props.minArtikel.url} target="" className="link">Läs mer...</a>
       </article>
     </div>
     );
