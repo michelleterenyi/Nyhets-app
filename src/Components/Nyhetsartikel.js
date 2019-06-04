@@ -2,15 +2,21 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
+  
 
 function Nyhetsartikel(props) {
     return (
-    <article>
-        <img src={props.minArtikel.urlToImage}/>
-        <h2>{props.minArtikel.title}</h2>
+    <div className="grid">
+      <article>
+        <img src={props.minArtikel.urlToImage} className="Bilder"/>
+        <h2 className="Rubrik">{props.minArtikel.title}</h2>
         <p>{props.minArtikel.description}</p>
-        <a>Läs mer...</a>
-      </article>);
+
+      {/* Länk till artiklarna */}
+        <a href={props.minArtikel.url} target="">Läs mer...</a>
+      </article>
+    </div>
+    );
 }
 
 

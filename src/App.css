@@ -23,6 +23,17 @@
   color: #61dafb;
 }
 
+.Bilder {
+  align: center;
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+}
+
+.Rubrik {
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
