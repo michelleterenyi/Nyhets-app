@@ -24,9 +24,29 @@ class App extends Component {
     description:"Beskrivning av den andra testnyheten",
     }]};
   }
+
+    componentDidMount() {
+      fetch("https://newsapi.org/v2/top-headlines?country=se&apiKey=f8365b3bd0cb497aaffb9125d1a42e74").then( function(response) {
+        // Detta gör något med den information som kommer tillbaka.
+        return response.json()
+      } ).then( jsondata => {
+        // Gör något med Json objektet
+        this.setState({ articles: jsondata.articles })
+      }).catch(error =>{
+        this.setState({
+          articles: [{
+          urlToImage: "fejk.jpg",
+          title: "Något gick fel",
+          description: "Du verkar tappat anslutningen till internet."
+        }]
+      });
+
+      })
+    }
+
   render () {
     return (
-      <Nyhetslista artikellista={this.state.articles}/>
+      <Nyhetslista minaArtiklar={this.state.articles}/>
     );
   }
 }

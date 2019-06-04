@@ -3,12 +3,12 @@
 import React from 'react';
 
 
-function Nyhetsartikel() {
+function Nyhetsartikel(props) {
     return (
     <article>
-        <img src="https://source.unsplash.com/random/400x250/?pink" />
-        <h2>Test Nyhet</h2>
-        <p>Beskrivning av nyhet</p>
+        <img src={props.minArtikel.urlToImage}/>
+        <h2>{props.minArtikel.title}</h2>
+        <p>{props.minArtikel.description}</p>
         <a>Läs mer...</a>
       </article>);
 }
