@@ -3,6 +3,10 @@
 import React from 'react';
 import Nyhetsartikel from './Nyhetsartikel';
 
+
+//Följande function "Nyhetslista" innehåller alla de artiklar som ska returneras på sidan, 
+// de artiklar som finns i "Nyhetsartikel.js" filen hittas här.
+
 function Nyhetslista(props) {
     return (
     <section>

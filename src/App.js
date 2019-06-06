@@ -25,13 +25,6 @@ class App extends Component {
     }]};
   }
       
-      render () {
-        return (
-          <div classname="Rubrik">
-            <h1>Dagens Nyheter!</h1>
-          </div>
-        )
-      }
 
     componentDidMount() {
       fetch("https://newsapi.org/v2/top-headlines?country=se&apiKey=f8365b3bd0cb497aaffb9125d1a42e74").then( function(response) {
@@ -46,17 +39,32 @@ class App extends Component {
           urlToImage: "fejk.jpg",
           title: "Något gick fel",
           description: "Du verkar tappat anslutningen till internet."
+          // Skulle något gå få på sidan så kommer felmeddelandet ovan att komma upp.
         }]
       });
 
       })
     }
 
+    //följande kod gör så att artiklarna returnerar till hemsidan.
   render () {
     return (
-      <Nyhetslista minaArtiklar={this.state.articles}/>
-    );
-  }
+      <div>
+
+        <header className="header">
+          <div>
+            <h1 className="Huvudrubrik">Dagens Nyheter</h1>
+            <p>Läs dagens nyheter här!</p>
+          </div>
+        </header>
+
+      <Nyhetslista className="grid" minaArtiklar={this.state.articles}/>
+     </div>
+
+     
+    )
+     }
+
 }
 
 export default App;

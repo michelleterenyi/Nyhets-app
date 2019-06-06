@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
-  
+  // I denna function skapas upplägget för de separata artiklarna. I vilken ordning bild
 
 function Nyhetsartikel(props) {
     return (

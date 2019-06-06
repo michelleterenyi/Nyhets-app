@@ -26,7 +26,7 @@
 }
 
 body {
-  background: aliceblue;
+  background: lavender;
 }
 
 .grid {
@@ -34,15 +34,14 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   border: 2px solid black;
   margin: 3em;
+  align-items: center;
 }
 
 .link {
-  text-align: center;
   color: black;
 }
 
 .Bilder {
-  align: center;
   width: 470px;
   height: 200px;
   margin: 10px;
@@ -55,7 +54,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.huvudrubrik {
+  align: center;
+}
 
+.header {
+  border: 2px solid black;
+  text-align: center;
+  margin: 3em;
+}
 
 @media only screen and (max-width: 800px) {
   
