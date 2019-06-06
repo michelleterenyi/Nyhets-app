@@ -7,6 +7,9 @@ import './App.css';
 import Nyhetslista from './Components/Nyhetslista';
 
 
+// Constructor är det som hjälper till att skapa objektet, d.v.s "articles" som innehåller testartiklarna. "Props" 
+// används för att de sedan ska skickas ner till andra komponenter, d.v.s till Nyhetslista.js och 
+// nyhetsartikel.js där de behandlas. 
 class App extends Component {
   constructor (props) {
     super(props);
@@ -29,6 +32,10 @@ class App extends Component {
     componentDidMount() {
       fetch("https://newsapi.org/v2/top-headlines?country=se&apiKey=f8365b3bd0cb497aaffb9125d1a42e74").then( function(response) {
         // Behandlar den information som kommer tillbaka.
+
+        if (response.status !== 200)  //Denna kod gör så att ett felmeddelande dyker upp i browsern om det skulle bli något fel med kopplingen.
+        throw Error(`status: ${response.status}`);  
+
         return response.json()
       } ).then( jsondata => {
         // Gör något med Json objektet
@@ -38,15 +45,15 @@ class App extends Component {
           articles: [{
           urlToImage: "fejk.jpg",
           title: "Något gick fel",
-          description: "Du verkar tappat anslutningen till internet."
-          // Skulle något gå få på sidan så kommer felmeddelandet ovan att komma upp.
+          description: `Något gick fel, ${error.message}`,
+          // Skulle något gå fel på sidan så kommer felmeddelandet ovan att dyka upp.
         }]
       });
 
       })
     }
 
-    //följande kod gör så att artiklarna returnerar till hemsidan.
+    
   render () {
     return (
       <div>
@@ -58,6 +65,7 @@ class App extends Component {
           </div>
         </header>
 
+        {/*Det som sker här är att props (innehållet i state, d.v.s artiklarna) skickas vidare till nästa komponent */}
       <Nyhetslista className="grid" minaArtiklar={this.state.articles}/>
      </div>
 
@@ -66,5 +74,7 @@ class App extends Component {
      }
 
 }
+
+//Gör så att koden i filen exporteras för att sedan kunna importeras in i en annan komponent.
 
 export default App;
